@@ -1,0 +1,19 @@
+import { initializeApp } from "firebase/app";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getFunctions } from "firebase/functions";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDWySDKarnFQU7j-7btcFSKdY8nM3NC3uA", // Replace with your Firebase config
+  authDomain: "mosarsy-mvp-new.firebaseapp.com",
+  projectId: "mosarsy-mvp-new",
+  storageBucket: "mosarsy-mvp-new.firebasestorage.app",
+  messagingSenderId: "364608014694",
+  appId: "1:364608014694:web:ba93a6993da49b5f9e20a7"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const functions = getFunctions(app);
+setPersistence(auth, browserLocalPersistence);
